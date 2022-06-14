@@ -1,6 +1,7 @@
 <template>
   <div class="hero">
     <img src="~assets/images/hero.jpg" alt="Uw instructeur Johan">
+    <img class="logo" src="~assets/images/logo.svg" alt="Rijschool Gorredijk logo">
     <div class="overlay">
       <h1>Hier komt goeie SEO tekst</h1>
       <container-cta to="#" text="Neem direct contact op" />
@@ -40,6 +41,11 @@ export default Vue.extend({
   object-position: bottom;
 }
 
+.logo {
+  opacity: 0.9;
+  transform: scale(0.9);
+}
+
 .overlay {
   margin: auto;
   display: grid;
@@ -67,6 +73,15 @@ export default Vue.extend({
 
 .overlay > div {
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  opacity: 0.7;
+  will-change: opacity;
+  transition: opacity 0.2s ease-in;
+}
+
+.overlay > div:hover {
+  opacity: 1;
 }
 
 @keyframes bounce-2 {

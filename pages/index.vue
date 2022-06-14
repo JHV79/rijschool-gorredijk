@@ -24,6 +24,22 @@
         </container-card>
       </div>
     </div>
+    <footer>
+      <div class="container">
+        <div class="card-grid">
+          <div class="left">
+            <h3>Contact</h3>
+            <a href="href:+00316">06 123 01 123</a>
+          </div>
+          <div class="mid">
+            <h3>Adres</h3>
+          </div>
+          <div class="right">
+            <h3>Voorwaarden</h3>
+          </div>
+        </div>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -53,7 +69,15 @@ export default Vue.extend({
   padding: 4rem 0;
 }
 
+.page footer {
+  background: #eee;
+}
+
 @media screen and (max-width: 48rem) {
+  .container {
+    padding: 1rem 2rem;
+  }
+
   .card-grid {
     grid-template-columns: none;
   }
