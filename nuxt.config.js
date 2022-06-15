@@ -16,6 +16,38 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    script: [
+      {
+        type: 'application/ld+json',
+        json: {
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "logo": `${process.env.SITE_DOMAIN}/logo.png`,
+          "image": [`${process.env.SITE_DOMAIN}/company-image.jpg`,],
+          "@id": process.env.SITE_DOMAIN,
+          "name": process.env.SITE_JSONLD_NAME,
+          "url": process.env.SITE_DOMAIN,
+          "email": process.env.EMAIL,
+          "telephone": process.env.TEL,
+          "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 08:00-20:00",
+          "address":
+          {
+            "@type": "PostalAddress",
+            "streetAddress": process.env.SITE_JSONLD_STREET_ADDR,
+            "addressLocality": process.env.SITE_JSONLD_LOCALITY,
+            "addressRegion": process.env.SITE_JSONLD_REGION,
+            "postalCode": process.env.SITE_JSONLD_POSTAL_CODE,
+            "addressCountry": process.env.SITE_JSONLD_COUNTRY
+          },
+          "geo":
+          {
+            "@type": "GeoCoordinates",
+            "latitude": process.env.SITE_JSONLD_LAT,
+            "longitude": process.env.SITE_JSONLD_LONG
+          },
+        }
+      },
     ]
   },
 

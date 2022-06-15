@@ -12,6 +12,8 @@
   --h2-line-height: 1.1;
   --h3-font-size: 2rem;
   --h3-line-height: 1.1;
+  --orange: #ff6600;
+  --light-orange: #ffccaa;
 }
 
 * {
