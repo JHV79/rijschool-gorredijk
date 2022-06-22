@@ -253,7 +253,9 @@ export default Vue.extend({
 }
 
 .handige-links a {
-  margin: 0 2rem;
+  margin: 0 2rem 1rem 2rem;
+  font-weight: bold;
+  line-height: 1.5;
 }
 
 .page footer {
