@@ -24,13 +24,13 @@
 }
 
 .first {
-  background: var(--light-orange);
+  background: var(--color-secondary);
   grid-column: 1;
   grid-row: 1 / 4;
 }
 
 .second {
-  background: var(--orange);
+  background: var(--color-primary);
   grid-column: 2;
   grid-row: 3 / -1;
   color: #fff;

@@ -1,6 +1,29 @@
 <template>
-  <Nuxt />
+  <div :style="styles">
+    <Nuxt />
+  </div>
 </template>
+
+<script lang="ts">
+import Vue from 'vue'
+export default Vue.extend({
+  data() {
+    return {
+      styles: {
+        '--color-primary': this.$store.state.prismic.primaire_kleur,
+        '--color-secondary': this.$store.state.prismic.secundaire_kleur
+      }
+    }
+  }
+})
+
+/*
+    styles: {
+      '--color-primary': this.$store.state.prismic.primaire_kleur,
+      '--color-secondary': this.$store.state.prismic.secundaire_kleur
+    }
+*/
+</script>
 
 <style>
 :root {
@@ -12,8 +35,6 @@
   --h2-line-height: 1.1;
   --h3-font-size: 2rem;
   --h3-line-height: 1.1;
-  --orange: #ff6600;
-  --light-orange: #ffccaa;
 }
 
 * {

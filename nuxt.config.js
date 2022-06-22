@@ -67,6 +67,7 @@ export default {
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
     '@nuxtjs/google-fonts',
+    '@nuxtjs/prismic'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -85,5 +86,10 @@ export default {
     families: {
       Poppins: true
     }
+  },
+  prismic: {
+    endpoint: 'https://rijschoolgorredijk.cdn.prismic.io/api/v2',
+    modern: true
+    // see documentation for more!
   }
 }
