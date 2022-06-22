@@ -109,6 +109,12 @@ export default Vue.extend({
   100% { transform: translateY(0); }
 }
 
+@media screen and (max-width: 48rem) {
+  .hero img {
+    object-position: 75% center;
+  }
+}
+
 /*
 .logo {
   opacity: 0.7;

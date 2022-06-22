@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <container-hero />
-    <div class="container">
+    <div class="main-content">
       <h2 id="content-start">{{ data.intro_heading }}</h2>
       <p v-for="(content, idx) in data.intro_tekst" :key="'intro' + idx">{{ content.text }}</p>
     </div>
@@ -24,7 +24,7 @@
       </div>
       <div class="contrast-primary">
         <h2>{{ data.tarieven_heading }}</h2>
-        <div v-for="(tarief, idx) in data.tarieven_data" :key="'tarieven' + idx">
+        <div v-for="(tarief, idx) in data.tarieven_data" :key="'tarieven' + idx" class="tarieven">
           <p>{{ tarief.tarief_beschijving }}</p>
           <p>€ {{ tarief.tarief }}</p>
         </div>
@@ -36,7 +36,7 @@
         <h2>{{ data['2todrive_heading'] }}</h2>
         <p v-for="(content, idx) in data['2todrive_tekst']" :key="'todrive' + idx">{{ content.text }}</p>
       </div>
-      <div>
+      <div class="handige-links">
         <h2>Handige links</h2>
         <a
           v-for="(content, idx) in data.handige_links"
@@ -87,8 +87,26 @@ export default Vue.extend({
   name: 'IndexPage',
   data() {
     return {
-      data: this.$store.state.prismic
+      data: this.$store.state.prismic,
     }
+  },
+  head() {
+    const { path } = this.$route;
+    const pathWithSlash = path.endsWith('/') ? path : `${path}/`;
+    let canonical = `${this.$config.domain}${pathWithSlash}`;
+    return {
+      title: this.$store.state.prismic.pagina_titel,
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: this.$store.state.prismic.pagina_beschrijving,
+        },
+      ],
+      link: [
+        { rel: 'canonical', href: canonical }
+      ],
+    };
   },
 })
 </script>
@@ -126,6 +144,12 @@ export default Vue.extend({
   margin-bottom: 1rem;
 }
 
+.main-content {
+  max-width: 58rem;
+  padding: 0 2rem;
+  margin: 0 auto 4rem auto;
+}
+
 .prismic-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -142,10 +166,21 @@ export default Vue.extend({
   margin: 4rem 0 2rem 0;
 }
 
+.tarieven {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  margin: 0 2rem;
+}
+
+.handige-links a {
+  margin: 0 2rem;
+}
+
 .page footer {
   background: var(--color-primary);
   color: #fff;
   overflow: hidden;
+  margin-top: 2rem;
 }
 
 .page footer .card-grid > div {
@@ -191,8 +226,13 @@ export default Vue.extend({
     padding: 1rem 2rem;
   }
 
-  .card-grid {
+  .card-grid,
+  .prismic-content {
     grid-template-columns: none;
+  }
+
+  .tarieven {
+    grid-template-columns: 1fr 1fr;
   }
 }
 </style>
