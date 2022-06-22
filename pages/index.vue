@@ -29,7 +29,17 @@
         <p v-for="(content, idx) in data.lesmethode_tekst" :key="'lesmethode' + idx">{{ content.text }}</p>
       </div>
       <div>
-        <h2>{{ data.theorie_heading }}</h2>
+        <div class="theorie-heading">
+          <h2>{{ data.theorie_heading }}</h2>
+          <image-set
+            :src="data.theorie_foto.url"
+            :alt="data.theorie_foto.alt"
+            :maxWidth="data.theorie_foto.dimensions.width"
+            :maxHeight="data.theorie_foto.dimensions.height"
+            :minWidth="200"
+            :count="10"
+          />
+        </div>
         <p v-for="(content, idx) in data.theorie_tekst" :key="'theorie' + idx">{{ content.text }}</p>
       </div>
       <div class="contrast-primary">
@@ -45,6 +55,22 @@
       <div class="contrast">
         <h2>{{ data['2todrive_heading'] }}</h2>
         <p v-for="(content, idx) in data['2todrive_tekst']" :key="'todrive' + idx">{{ content.text }}</p>
+      </div>
+      <div class="duurzaamheid">
+        <h2>{{ data.duurzaamheid_heading }}</h2>
+        <image-set
+          :src="data.duurzaamheid_foto.url"
+          :alt="data.duurzaamheid_foto.alt"
+          :maxWidth="data.duurzaamheid_foto.dimensions.width"
+          :maxHeight="data.duurzaamheid_foto.dimensions.height"
+          :minWidth="200"
+          :count="10"
+        />
+        <p v-for="(content, idx) in data.duurzaamheid_tekst" :key="'duurzaamheid' + idx">{{ content.text }}</p>
+      </div>
+      <div>
+        <h2>{{ data.corona_heading }}</h2>
+        <p v-for="(content, idx) in data.corona_tekst" :key="'corona' + idx">{{ content.text }}</p>
       </div>
       <div class="handige-links">
         <h2>Handige links</h2>
@@ -173,7 +199,8 @@ export default Vue.extend({
 .prismic-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  column-gap: 2rem;
+  row-gap: 6rem;
 }
 
 .prismic-content > div {
@@ -192,7 +219,8 @@ export default Vue.extend({
   transform: scale(1.2);
 }
 
-.over-mij-heading {
+.over-mij-heading,
+.theorie-heading {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -209,6 +237,19 @@ export default Vue.extend({
   display: grid;
   grid-template-columns: 1fr 4fr;
   margin: 0 2rem;
+}
+
+.duurzaamheid {
+  grid-column: 1 / -1;
+  padding: 0 1rem;
+  max-width: 60rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.duurzaamheid img {
+  display: block;
+  margin: 1rem auto;
 }
 
 .handige-links a {

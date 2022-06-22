@@ -7,6 +7,7 @@
       :maxHeight="img.dimensions.height"
       :minWidth="200"
       :count="10"
+      loading="eager"
     />
     <div class="overlay">
       <svg class="logo" viewBox="0 0 28.466375 11.589034" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
