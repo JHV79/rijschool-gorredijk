@@ -7,7 +7,17 @@
     </div>
     <div class="container prismic-content">
       <div class="contrast">
-        <h2>{{ data.over_mij_heading }}</h2>
+        <div class="over-mij-heading">
+          <h2>{{ data.over_mij_heading }}</h2>
+          <image-set
+            :src="data.over_mij_foto.url"
+            :alt="data.over_mij_foto.alt"
+            :maxWidth="data.over_mij_foto.dimensions.width"
+            :maxHeight="data.over_mij_foto.dimensions.height"
+            :minWidth="200"
+            :count="10"
+          />
+        </div>
         <p v-for="(content, idx) in data.over_mij_tekst" :key="'overmij' + idx">{{ content.text }}</p>
       </div>
       <div class="contrast-primary">
@@ -117,6 +127,11 @@ export default Vue.extend({
   flex-direction: column;
 }
 
+.page img {
+  max-width: 100%;
+  height: auto;
+}
+
 .card-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -144,6 +159,11 @@ export default Vue.extend({
   margin-bottom: 1rem;
 }
 
+#content-start {
+  padding: 1rem 0;
+  margin: 4rem 0 2rem 0;
+}
+
 .main-content {
   max-width: 58rem;
   padding: 0 2rem;
@@ -161,9 +181,28 @@ export default Vue.extend({
   padding-right: 2rem;
 }
 
-#content-start {
-  padding: 1rem 0;
-  margin: 4rem 0 2rem 0;
+.prismic-content a {
+  color: var(--color-primary);
+  display: inline-block;
+  transition: transform 0.2s ease-in;
+  will-change: transform;
+}
+
+.prismic-content a:hover {
+  transform: scale(1.2);
+}
+
+.over-mij-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.over-mij-heading h2 {
+  margin-bottom: 0;
+  border-bottom: var(--color-primary) solid 4px;
 }
 
 .tarieven {
