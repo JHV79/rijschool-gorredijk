@@ -104,6 +104,8 @@
             <p>De Buorren 21</p>
             <p>8408HG Lippenhuizen</p>
             <p>Friesland</p>
+            <p>KvK 86570358</p>
+            <p>CBR-rijschoolnummer 2086N2</p>
           </div>
           <div class="right">
             <h3>Voorwaarden</h3>
