@@ -73,16 +73,6 @@ export default Vue.extend({
       if(this.flip !== '') {
         params.flip = this.flip;
       }
-      // const url = this.src.indexOf('?') === -1 ? this.src : this.src.substring(0, this.src.indexOf('?'))
-      // const qs: any = {
-      //   auto: 'format',
-      //   fit: 'crop',
-      //   w: width,
-      //   'max-w': width
-      // }
-      // if(this.flip !== '') {
-      //   qs.flip = this.flip
-      // }
       return url + '?' + stringify(params);
     },
     getSrc() {
