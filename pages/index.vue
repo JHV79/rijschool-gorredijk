@@ -84,10 +84,6 @@
           />
         </div>
       </div>
-      <div>
-        <h2>{{ data.corona_heading }}</h2>
-        <p v-for="(content, idx) in data.corona_tekst" :key="'corona' + idx">{{ content.text }}</p>
-      </div>
       <div class="handige-links">
         <h2>Handige links</h2>
         <a
@@ -95,6 +91,10 @@
           :key="'handige_links' + idx"
           :href="content.link"
         >{{ content.link_tekst }}</a>
+      </div>
+      <div>
+        <h2>{{ data.corona_heading }}</h2>
+        <p v-for="(content, idx) in data.corona_tekst" :key="'corona' + idx">{{ content.text }}</p>
       </div>
     </div>
     <footer>
@@ -258,6 +258,7 @@ export default Vue.extend({
   gap: 0.625rem;
   margin: 2rem;
   color: var(--color-primary);
+  font-weight: 800;
 }
 
 .usps li svg {
@@ -310,10 +311,16 @@ export default Vue.extend({
   transform: scale(1.1);
 }
 
+.handige-links {
+  overflow: hidden;
+}
+
 .handige-links a {
   margin: 0 2rem 1rem 2rem;
   font-weight: bold;
   line-height: 1.5;
+  display: block;
+  transform-origin: left;
 }
 
 .page footer {
@@ -363,12 +370,19 @@ export default Vue.extend({
 
 @media screen and (max-width: 48rem) {
   .container {
-    padding: 1rem 2rem;
+    padding: 1rem;
   }
 
   .card-grid,
-  .prismic-content {
-    grid-template-columns: none;
+  .prismic-content,
+  .duurzaamheid {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0;
+  }
+
+  .duurzaamheid img {
+    margin-bottom: 3rem;
   }
 
   .tarieven {
