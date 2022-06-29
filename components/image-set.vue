@@ -12,7 +12,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { stringify } from 'querystring'
+import { stringify, parse } from 'querystring'
 
 function calcSet(amount: number, min: number, max: number): number[] {
   const ret: number[] = []
@@ -66,17 +66,24 @@ export default Vue.extend({
   },
   methods: {
     getImgSrc(width: number): string {
-      const url = this.src.indexOf('?') === -1 ? this.src : this.src.substring(0, this.src.indexOf('?'))
-      const qs: any = {
-        auto: 'format',
-        fit: 'crop',
-        w: width,
-        'max-w': width
-      }
+      let [ url, qs ] = this.src.split('?');
+      qs = qs || '';
+      let params = parse(qs);
+      params.auto = 'format';
       if(this.flip !== '') {
-        qs.flip = this.flip
+        params.flip = this.flip;
       }
-      return url + '?' + stringify(qs)
+      // const url = this.src.indexOf('?') === -1 ? this.src : this.src.substring(0, this.src.indexOf('?'))
+      // const qs: any = {
+      //   auto: 'format',
+      //   fit: 'crop',
+      //   w: width,
+      //   'max-w': width
+      // }
+      // if(this.flip !== '') {
+      //   qs.flip = this.flip
+      // }
+      return url + '?' + stringify(params);
     },
     getSrc() {
       return this.getImgSrc(this.maxWidth)
