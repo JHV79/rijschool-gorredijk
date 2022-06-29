@@ -45,19 +45,19 @@
           <p v-for="(content, idx) in data.lesmethode_tekst" :key="'lesmethode' + idx">{{ content.text }}</p>
         </div>
       </div>
-      <div>
-        <div class="theorie-heading">
-          <h2>{{ data.theorie_heading }}</h2>
-          <image-set
-            :src="data.theorie_foto.url"
-            :alt="data.theorie_foto.alt"
-            :maxWidth="data.theorie_foto.dimensions.width"
-            :maxHeight="data.theorie_foto.dimensions.height"
-            :minWidth="200"
-            :count="10"
-          />
+      <div class="theorie">
+        <h2>{{ data.theorie_heading }}</h2>
+        <image-set
+          :src="data.theorie_foto.url"
+          :alt="data.theorie_foto.alt"
+          :maxWidth="data.theorie_foto.dimensions.width"
+          :maxHeight="data.theorie_foto.dimensions.height"
+          :minWidth="200"
+          :count="10"
+        />
+        <div>
+          <p v-for="(content, idx) in data.theorie_tekst" :key="'theorie' + idx">{{ content.text }}</p>
         </div>
-        <p v-for="(content, idx) in data.theorie_tekst" :key="'theorie' + idx">{{ content.text }}</p>
       </div>
       <div class="contrast-primary">
         <h2>{{ data.tarieven_heading }}</h2>
@@ -283,8 +283,7 @@ export default Vue.extend({
   font-style: italic;
 }
 
-.over-mij-heading,
-.theorie-heading {
+.over-mij-heading {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -303,25 +302,32 @@ export default Vue.extend({
   margin: 0 2rem;
 }
 
+.theorie,
 .lesmethode,
 .duurzaamheid {
   grid-column: 1 / -1;
   padding: 0 1rem;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 1fr 4fr;
+  gap: 2rem;
+}
+
+.duurzaamheid {
   align-items: center;
 }
 
 .lesmethode img,
-.duurzaamheid img {
+.duurzaamheid img,
+.theorie img {
   filter: drop-shadow(0 0 1.75rem rgb(0, 0, 0));
   will-change: transform;
   transition: transform 0.2s ease-out;
 }
 
 .lesmethode img:hover,
-.duurzaamheid img:hover {
+.duurzaamheid img:hover,
+.theorie img:hover {
   transform: scale(1.1);
 }
 
