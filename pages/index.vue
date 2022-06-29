@@ -4,6 +4,13 @@
     <div class="main-content">
       <h2 id="content-start">{{ data.intro_heading }}</h2>
       <p v-for="(content, idx) in data.intro_tekst" :key="'intro' + idx">{{ content.text }}</p>
+      <ul class="usps">
+        <li v-for="(content, idx) in data.intro_usp" :key="'usps' + idx">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path fill="currentColor" d="M96 480c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L242.8 256L73.38 86.63c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25l-192 192C112.4 476.9 104.2 480 96 480z"/></svg>
+          <span>{{ content.usp_tekst }}</span>
+        </li>
+      </ul>
+      <p v-for="(content, idx) in data.intro_voetnoot" :key="'intro_voetnoot' + idx">{{ content.text }}</p>
     </div>
     <div class="container prismic-content">
       <div class="contrast">
@@ -20,7 +27,7 @@
         </div>
         <p v-for="(content, idx) in data.over_mij_tekst" :key="'overmij' + idx">{{ content.text }}</p>
       </div>
-      <div class="contrast-primary">
+      <div class="contrast-primary grid-fill-vertical">
         <h2>{{ data.doelstelling_heading }}</h2>
         <p v-for="(content, idx) in data.doelstelling_tekst" :key="'doelstelling' + idx">{{ content.text }}</p>
       </div>
@@ -109,7 +116,7 @@
           </div>
           <div class="right">
             <h3>Voorwaarden</h3>
-            <n-link to="/Algemene-voorwaarden-Gorredijk.pdf">Algemene voorwaarden</n-link>
+            <a href="/Algemene-voorwaarden-Gorredijk.pdf">Algemene voorwaarden</a>
           </div>
         </div>
       </div>
@@ -176,6 +183,12 @@ export default Vue.extend({
   padding: 3rem 0;
 }
 
+.grid-fill-vertical {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
 .contrast-primary {
   background: var(--color-primary);
   color: #fff;
@@ -184,7 +197,7 @@ export default Vue.extend({
 
 .main-content p,
 .prismic-content p {
-  margin-bottom: 1rem;
+  margin: 0 1rem 1rem 1rem;
 }
 
 #content-start {
@@ -221,6 +234,26 @@ export default Vue.extend({
   transform: scale(1.2);
 }
 
+.usps li {
+  display: grid;
+  grid-template-columns: 16px 1fr;
+  align-items: center;
+  gap: 0.625rem;
+  margin: 2rem;
+  color: var(--color-primary);
+}
+
+.usps li svg {
+  width: 12px;
+  height: auto;
+  background: var(--color-secondary);
+  padding: 2px;
+}
+
+.usps li span {
+  font-style: italic;
+}
+
 .over-mij-heading,
 .theorie-heading {
   display: flex;
@@ -246,7 +279,6 @@ export default Vue.extend({
   padding: 0 1rem;
   max-width: 60rem;
   margin: 0 auto;
-  text-align: center;
 }
 
 .duurzaamheid img {
