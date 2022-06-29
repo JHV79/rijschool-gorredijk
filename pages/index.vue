@@ -315,6 +315,7 @@ export default Vue.extend({
 
 .duurzaamheid {
   align-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .lesmethode img,
