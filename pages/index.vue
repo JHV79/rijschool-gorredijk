@@ -31,9 +31,19 @@
         <h2>{{ data.doelstelling_heading }}</h2>
         <p v-for="(content, idx) in data.doelstelling_tekst" :key="'doelstelling' + idx">{{ content.text }}</p>
       </div>
-      <div>
+      <div class="lesmethode">
         <h2>{{ data.lesmethode_heading }}</h2>
-        <p v-for="(content, idx) in data.lesmethode_tekst" :key="'lesmethode' + idx">{{ content.text }}</p>
+        <image-set
+          :src="data.lesmethode_foto.url"
+          :alt="data.lesmethode_foto.alt"
+          :maxWidth="data.lesmethode_foto.dimensions.width"
+          :maxHeight="data.lesmethode_foto.dimensions.height"
+          :minWidth="200"
+          :count="10"
+        />
+        <div>
+          <p v-for="(content, idx) in data.lesmethode_tekst" :key="'lesmethode' + idx">{{ content.text }}</p>
+        </div>
       </div>
       <div>
         <div class="theorie-heading">
@@ -73,7 +83,9 @@
           :minWidth="200"
           :count="10"
         />
-        <p v-for="(content, idx) in data.duurzaamheid_tekst" :key="'duurzaamheid' + idx">{{ content.text }}</p>
+        <div>
+          <p v-for="(content, idx) in data.duurzaamheid_tekst" :key="'duurzaamheid' + idx">{{ content.text }}</p>
+        </div>
       </div>
       <div>
         <h2>{{ data.faq_heading }}</h2>
@@ -126,10 +138,9 @@
           <div class="mid">
             <h3>Adres</h3>
             <p>De Buorren 21</p>
-            <p>8408 HG Lippenhuizen</p>
-            <p>Friesland</p>
+            <p>8408 HG Lippenhuizen (FR)</p>
             <p>KvK 86570358</p>
-            <p>CBR-rijschoolnummer 2086N2</p>
+            <p>CBR 2086N2</p>
           </div>
           <div class="right">
             <h3>Voorwaarden</h3>
@@ -292,6 +303,7 @@ export default Vue.extend({
   margin: 0 2rem;
 }
 
+.lesmethode,
 .duurzaamheid {
   grid-column: 1 / -1;
   padding: 0 1rem;
@@ -301,12 +313,14 @@ export default Vue.extend({
   align-items: center;
 }
 
+.lesmethode img,
 .duurzaamheid img {
   filter: drop-shadow(0 0 1.75rem rgb(0, 0, 0));
   will-change: transform;
   transition: transform 0.2s ease-out;
 }
 
+.lesmethode img:hover,
 .duurzaamheid img:hover {
   transform: scale(1.1);
 }
