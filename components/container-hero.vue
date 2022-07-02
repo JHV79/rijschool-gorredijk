@@ -11,7 +11,7 @@
     />
     <div class="overlay">
       <div class="logo">
-        <svg viewBox="0 0 95 25" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo">
+        <svg viewBox="0 0 95 25" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path class="logo-secondary" d="M27.1805 22.3047C23.3287 21.0872 21.2919 19.8541 20.4035 18.2019C19.7828 17.0476 19.8694 16.1718 20.7248 14.9538C23.7747 10.6109 37.4262 8.62339 47.5775 11.0442C49.6253 11.5326 53.2108 12.9096 52.9903 13.123C52.9223 13.1888 51.3428 13.0882 49.4801 12.8995C46.9536 12.6435 45.2022 12.6406 42.5835 12.8888C31.4747 13.9384 25.8047 18.0291 29.9284 22.0191C30.9532 23.0106 30.9532 23.0107 30.1404 22.9974C29.6933 22.9903 28.3614 22.6779 27.1805 22.3047Z" fill="#FFCCAA"/>
           <g class="logo-tekst">
             <path d="M11.9675 23.6628C5.54787 21.3215 2.15321 18.9503 0.672469 15.773C-0.362074 13.5531 -0.21769 11.8689 1.20803 9.52649C6.29122 1.17486 29.0437 -2.64733 45.9625 2.00815C49.3754 2.94726 55.3514 5.59543 54.9838 6.00578C54.8705 6.13229 52.2379 5.93892 49.1336 5.57589C44.9227 5.08366 42.0036 5.07808 37.6392 5.55544C19.1245 7.57381 9.67452 15.4406 16.5473 23.1136C18.2553 25.0205 18.2553 25.0205 16.9006 24.995C16.1555 24.9813 13.9356 24.3821 11.9675 23.6644V23.6628Z" fill="#FF6600"/>
@@ -38,7 +38,7 @@
       </div>
       <div class="content">
         <h1>{{ heading }}</h1>
-        <svg @click="handleScrollToContent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M374.6 310.6l-160 160C208.4 476.9 200.2 480 192 480s-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 370.8V64c0-17.69 14.33-31.1 31.1-31.1S224 46.31 224 64v306.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0S387.1 298.1 374.6 310.6z"/></svg>
+        <svg @click="handleScrollToContent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path fill="currentColor" d="M374.6 310.6l-160 160C208.4 476.9 200.2 480 192 480s-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 370.8V64c0-17.69 14.33-31.1 31.1-31.1S224 46.31 224 64v306.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0S387.1 298.1 374.6 310.6z"/></svg>
       </div>
     </div>
   </div>
@@ -89,6 +89,13 @@ export default Vue.extend({
 .logo {
   background: rgba(0, 0, 0, 0.534);
   padding: 2rem;
+  height: auto;
+}
+
+.logo svg {
+  display: block;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .logo-primary {
@@ -103,13 +110,15 @@ export default Vue.extend({
   fill: #fff;
 }
 
-.overlay h1 {
-  margin-top: 2rem;
-  color: #fff;
-}
-
 .content {
   text-align: center;
+}
+
+.content h1 {
+  margin-top: 2rem;
+  color: #fff;
+  margin: 3rem 10vw 3rem 10vw;
+  text-align: left;
 }
 
 .content svg {
@@ -119,6 +128,7 @@ export default Vue.extend({
   animation-timing-function: ease;
   animation-duration: 4s;
   animation-iteration-count: infinite;
+  color: #fff;
 }
 
 @keyframes bounce-2 {
