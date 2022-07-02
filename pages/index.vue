@@ -27,9 +27,17 @@
         </div>
         <p v-for="(content, idx) in data.over_mij_tekst" :key="'overmij' + idx">{{ content.text }}</p>
       </div>
-      <div class="contrast-primary grid-fill-vertical">
+      <div class="contrast-primary">
         <h2>{{ data.doelstelling_heading }}</h2>
         <p v-for="(content, idx) in data.doelstelling_tekst" :key="'doelstelling' + idx">{{ content.text }}</p>
+        <image-set
+          :src="data.doelstelling_foto.url"
+          :alt="data.doelstelling_foto.alt"
+          :maxWidth="data.doelstelling_foto.dimensions.width"
+          :maxHeight="data.doelstelling_foto.dimensions.height"
+          :minWidth="200"
+          :count="10"
+        />
       </div>
       <div class="lesmethode">
         <h2>{{ data.lesmethode_heading }}</h2>
