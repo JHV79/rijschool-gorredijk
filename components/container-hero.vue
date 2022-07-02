@@ -87,7 +87,6 @@ export default Vue.extend({
 }
 
 .logo {
-  background: rgba(0, 0, 0, 0.534);
   padding: 2rem;
   height: auto;
 }

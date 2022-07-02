@@ -417,7 +417,8 @@ export default Vue.extend({
   .prismic-content,
   .duurzaamheid,
   .theorie,
-  .lesmethode {
+  .lesmethode,
+  .corona {
     display: flex;
     flex-direction: column;
     margin: 2rem 0;
