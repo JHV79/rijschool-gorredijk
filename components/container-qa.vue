@@ -63,6 +63,7 @@ export default Vue.extend({
   background: var(--color-primary);
   color: #fff;
   cursor: pointer;
+  border-bottom: solid 1px #fff;
 }
 
 .faqitem > p button {
@@ -87,6 +88,7 @@ export default Vue.extend({
   opacity: 0;
   transition: transform 0.2s ease-out;
   will-change: transform, opacity;
+  display: none;
 }
 
 .faqitem.open > p svg {
@@ -96,5 +98,6 @@ export default Vue.extend({
 .faqitem.open .answer {
   transform: translateX(0);
   opacity: 1;
+  display: block;
 }
 </style>
