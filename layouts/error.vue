@@ -2,7 +2,7 @@
   <div class="error-page">
     <h1 v-if="error.statusCode === 404">Pagina niet gevonden</h1>
     <h1 v-else>Er is een fout opgetreden</h1>
-    <NuxtLink to="/">Terug naar de hoofdpagina</NuxtLink>
+    <n-link to="/">Terug naar de hoofdpagina</n-link>
   </div>
 </template>
 
