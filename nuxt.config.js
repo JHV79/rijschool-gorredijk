@@ -78,6 +78,10 @@ export default {
   build: {
   },
 
+  generate: {
+    fallback: true
+  },
+
   googleFonts: {
     preload: true,
     download: true,
