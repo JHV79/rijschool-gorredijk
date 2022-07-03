@@ -323,8 +323,9 @@ export default Vue.extend({
 
 .tarieven {
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 2fr 1fr;
   margin: 0 2rem;
+  gap: 2rem;
 }
 
 .theorie,
@@ -437,7 +438,7 @@ export default Vue.extend({
   }
 
   .tarieven {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
   }
 }
 </style>

@@ -166,6 +166,7 @@ export default Vue.extend({
   color: #fff;
   margin: 10% 10vw 3rem 10vw;
   text-align: left;
+  text-shadow: 2px 1px 3px #000;
 }
 
 .content svg {
