@@ -6,7 +6,7 @@ export default {
   head: {
     title: 'Rijschool Gorredijk',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'nl'
     },
     meta: [
       { charset: 'utf-8' },

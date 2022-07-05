@@ -114,6 +114,7 @@ export default Vue.extend({
 <style scoped>
 .hero {
   display: grid;
+  min-height: 80vh;
 }
 
 .hero img {
@@ -131,12 +132,13 @@ export default Vue.extend({
 
 .overlay {
   display: grid;
-  margin: auto;
+  margin: auto auto 2rem auto;
 }
 
 .logo {
   padding: 2rem;
   height: auto;
+  background: rgba(255, 255, 255, 0.534);
 }
 
 .logo svg {
@@ -164,7 +166,7 @@ export default Vue.extend({
 .content h1 {
   margin-top: 2rem;
   color: #fff;
-  margin: 10% 10vw 3rem 10vw;
+  margin: 1% 20vw 3rem 20vw;
   text-align: left;
   text-shadow: 2px 1px 3px #000;
 }
@@ -177,6 +179,7 @@ export default Vue.extend({
   animation-duration: 4s;
   animation-iteration-count: infinite;
   color: #fff;
+  margin-top: 5%;
 }
 
 @keyframes bounce-2 {
@@ -187,7 +190,11 @@ export default Vue.extend({
 
 @media screen and (max-width: 48rem) {
   .hero img {
-    object-position: 75% center;
+    object-position: left center;
+  }
+
+  .content h1 {
+    margin: 1% 5vw 3rem 5vw;
   }
 }
 </style>
