@@ -114,6 +114,81 @@ export default Vue.extend({
 <style scoped>
 .hero {
   display: grid;
+}
+
+.hero img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.hero img,
+.overlay {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.overlay {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  max-width: 60vw;
+  margin: auto auto 0 auto;
+}
+
+.content {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.logo {
+  min-width: 300px;
+  margin: 0 auto 4rem auto;
+  background: rgba(255, 255, 255, 0.603);
+  padding: 5px 20px;
+  border-radius: 16px;
+  box-shadow: 2px 1px 3px #000;
+}
+
+.content svg {
+  width: calc(384px / 7);
+  height: calc(512px / 7);
+  animation-name: bounce-2;
+  animation-timing-function: ease;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  color: #fff;
+  margin: 0 auto;
+}
+
+.content h1 {
+  color: #fff;
+  text-align: left;
+  text-shadow: 2px 1px 3px #000;
+}
+
+@keyframes bounce-2 {
+  0%   { transform: translateY(-36px); }
+  50%  { transform: translateY(-5px); }
+  100% { transform: translateY(-36px); }
+}
+
+@media screen and (max-width: 48rem) {
+  .overlay {
+    max-width: 90%;
+  }
+
+  .content h1 {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 6rem;
+  }
+
+  .hero img {
+    object-position: left center;
+  }
+}
+
+/* .hero {
+  display: grid;
   min-height: 80vh;
 }
 
@@ -194,5 +269,5 @@ export default Vue.extend({
   .content h1 {
     margin: 1% 5vw 3rem 5vw;
   }
-}
+} */
 </style>
