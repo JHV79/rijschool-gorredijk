@@ -57,8 +57,10 @@ export default Vue.extend({
 }
 
 .faqitem > p {
-  display: flex;
+  display: grid;
   align-items: center;
+  grid-template-columns: 1fr 18px;
+  gap: 1rem;
   justify-content: space-between;
   background: var(--color-primary);
   color: #fff;
@@ -78,7 +80,7 @@ export default Vue.extend({
 .faqitem > p svg {
   width: 18px;
   height: 13px;
-  transform: rotate(90deg);
+  transform: rotate(0deg);
   transition: transform 0.2s ease-out;
   will-change: transform;
 }
@@ -92,7 +94,7 @@ export default Vue.extend({
 }
 
 .faqitem.open > p svg {
-  transform: rotate(0deg);
+  transform: rotate(180deg);
 }
 
 .faqitem.open .answer {

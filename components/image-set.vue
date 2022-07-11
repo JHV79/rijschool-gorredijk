@@ -70,6 +70,8 @@ export default Vue.extend({
       qs = qs || '';
       let params = parse(qs);
       params.auto = 'format';
+      params.w = width.toString();
+      params['max-w'] = width.toString();
       if(this.flip !== '') {
         params.flip = this.flip;
       }
