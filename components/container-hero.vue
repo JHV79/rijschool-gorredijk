@@ -131,7 +131,7 @@ export default Vue.extend({
   display: grid;
   grid-template-rows: auto 1fr;
   max-width: 60vw;
-  margin: auto auto 0 auto;
+  margin: 5% auto 0 auto;
 }
 
 .content {
@@ -142,10 +142,8 @@ export default Vue.extend({
 .logo {
   min-width: 300px;
   margin: 0 auto 4rem auto;
-  background: rgba(255, 255, 255, 0.603);
   padding: 5px 20px;
-  border-radius: 16px;
-  box-shadow: 2px 1px 3px #000;
+  filter: drop-shadow(0 0 1.75rem rgb(255, 255, 255));
 }
 
 .content svg {
