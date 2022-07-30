@@ -56,6 +56,10 @@ body {
   line-height: var(--body-line-height);
 }
 
+/* body * {
+  outline: blue solid 3px;
+} */
+
 h1,
 h2,
 h3 {

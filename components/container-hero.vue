@@ -140,10 +140,14 @@ export default Vue.extend({
 }
 
 .logo {
-  min-width: 300px;
   margin: 0 auto 4rem auto;
   padding: 5px 20px;
   filter: drop-shadow(0 0 1.75rem rgb(255, 255, 255));
+}
+
+.logo svg {
+  width: 100%;
+  height: auto;
 }
 
 .content svg {
@@ -181,7 +185,7 @@ export default Vue.extend({
   }
 
   .hero img {
-    object-position: left center;
+    object-fit: cover;
   }
 }
 
