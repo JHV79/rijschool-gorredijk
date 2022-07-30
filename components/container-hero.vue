@@ -116,7 +116,7 @@ export default Vue.extend({
   display: grid;
 }
 
-.hero img {
+.hero > img {
   max-width: 100%;
   object-fit: cover;
 }
@@ -184,8 +184,14 @@ export default Vue.extend({
     margin-bottom: 6rem;
   }
 
-  .hero img {
-    object-fit: cover;
+  .content svg {
+    color: var(--color-primary);
+  }
+
+  .hero > img {
+    object-fit: contain;
+    object-position: center;
+    max-height: 480px;
   }
 }
 
