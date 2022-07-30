@@ -191,9 +191,6 @@ export default Vue.extend({
     }
   },
   head() {
-    const { path } = this.$route;
-    const pathWithSlash = path.endsWith('/') ? path : `${path}/`;
-    let canonical = `${this.$config.domain}${pathWithSlash}`;
     return {
       title: this.$store.state.prismic.pagina_titel,
       meta: [
@@ -204,7 +201,7 @@ export default Vue.extend({
         },
       ],
       link: [
-        { rel: 'canonical', href: canonical }
+        { rel: 'canonical', href: 'https://rijschoolgorredijk.nl/' }
       ],
     };
   },
