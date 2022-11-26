@@ -2,7 +2,7 @@
   <div class="page">
     <container-hero />
     <div class="main-content">
-      <h2 id="content-start">{{ data.intro_heading }}</h2>
+      <h2 id="content-start">{{ data.usp_heading }}</h2>
       <p v-for="(content, idx) in data.intro_tekst" :key="'intro' + idx">{{ content.text }}</p>
       <ul class="usps">
         <li v-for="(content, idx) in data.intro_usp" :key="'usps' + idx">
@@ -10,6 +10,7 @@
           <span>{{ content.usp_tekst }}</span>
         </li>
       </ul>
+      <h2>{{ data.intro_heading }}</h2>
       <p v-for="(content, idx) in data.intro_voetnoot" :key="'intro_voetnoot' + idx">{{ content.text }}</p>
       <div class="ctas">
         <a href="tel:+0031633418680">
