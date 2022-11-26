@@ -10,7 +10,8 @@
           <span>{{ content.usp_tekst }}</span>
         </li>
       </ul>
-      <h2>{{ data.intro_heading }}</h2>
+      <prismic-rich-text :field="data.usp_voetnoot" class="usp-voetnoot" />
+      <h2>{{ data.intro_heading[0].text }}</h2>
       <p v-for="(content, idx) in data.intro_voetnoot" :key="'intro_voetnoot' + idx">{{ content.text }}</p>
       <div class="ctas">
         <a href="tel:+0031633418680">
@@ -332,6 +333,11 @@ export default Vue.extend({
 
 .usps li span {
   font-style: italic;
+}
+
+.usp-voetnoot {
+  margin: 3rem 0;
+  padding: 0 4rem;
 }
 
 .over-mij-heading {
